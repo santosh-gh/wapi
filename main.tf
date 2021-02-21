@@ -2,7 +2,7 @@ provider "azurerm" {
     version = "2.5.0"
     features {}
 }
-
+/*
 terraform {
     backend "azurerm" {
         resource_group_name  = "tf_rg_blobstore"
@@ -11,7 +11,7 @@ terraform {
         key                  = "terraform.tfstate"
     }
 }
-
+*/
 variable "imagebuild" {
   type        = string
   description = "Latest Image Build"
@@ -21,7 +21,7 @@ variable "imagebuild" {
 
 resource "azurerm_resource_group" "tf_test" {
   name = "tfmainrg"
-  location = "Australia East"
+  location = "South India"
 }
 
 resource "azurerm_container_group" "tfcg_test" {
@@ -30,12 +30,12 @@ resource "azurerm_container_group" "tfcg_test" {
   resource_group_name       = azurerm_resource_group.tf_test.name
 
   ip_address_type     = "public"
-  dns_name_label      = "binarythistlewa"
+  dns_name_label      = "e880613dns"
   os_type             = "Linux"
 
   container {
       name            = "weatherapi"
-      image           = "binarythistle/weatherapi:${var.imagebuild}"
+      image           = "e880613/santosh:${var.imagebuild}"
         cpu             = "1"
         memory          = "1"
 
