@@ -22,7 +22,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'santosh-gh'
+        containerRegistry: 'santoshdr'
         repository: 'e880613/weatherapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
